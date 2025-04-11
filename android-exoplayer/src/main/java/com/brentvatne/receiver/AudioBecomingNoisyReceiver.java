@@ -25,7 +25,7 @@ public class AudioBecomingNoisyReceiver extends BroadcastReceiver {
     public void setListener(BecomingNoisyListener listener) {
         this.listener = listener;
         IntentFilter intentFilter = new IntentFilter(AudioManager.ACTION_AUDIO_BECOMING_NOISY);
-        context.registerReceiver(this, intentFilter);
+        context.registerReceiver(this, intentFilter, Context.RECEIVER_EXPORTED);
     }
 
     public void removeListener() {
